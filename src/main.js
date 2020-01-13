@@ -1,8 +1,8 @@
 // 解析用户参数
+
 const program = require('commander')
 const path = require('path')
 const { version } = require('./constants')
-
 // 命令集合
 const mapActions = {
   create: {
@@ -17,6 +17,8 @@ const mapActions = {
     description: 'config project variable',
     examples: [
       'ca-cli config set <k> <v>',
+      'ca-cli config get <k>',
+      'ca-cli config remove <k>',
     ]
   },
   '*': {

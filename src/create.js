@@ -2,7 +2,8 @@ const axios = require('axios')
 const ora = require('ora') // 终端样式
 const Inquirer = require('inquirer') // 命令行交互
 const { promisify } = require('util')
-const fs = require('path')
+const fs = require('fs')
+const path = require('path')
 let ncp = require('ncp')
 let downloadGitReop = require('download-git-repo') // 下载git仓库
 const MetalSmith = require('metalsmith') // 遍历文件夹
@@ -53,6 +54,7 @@ const download = async (repo, tag) => {
 }
 
 module.exports = async (projectName) => {
+  console.log('~~~',projectName )
   // 1) 获取项目模板
   let repos = await waitFnloading(fetchRepoList, 'fetching template......')()
 
